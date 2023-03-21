@@ -16,7 +16,7 @@ async function prompt() {
   });
 
   return new Promise((resolve, reject) => {
-    rl.question('Do you want to install the example bundles? [Y/n] ', resolve);
+    rl.question('Do you want to install the bundles? [Y/n] ', resolve);
   });
 }
 
@@ -76,12 +76,9 @@ async function main() {
 
   console.info(`
 -------------------------------------------------------------------------------
-Example bundles have been installed as submodules. It's recommended that you now
-run the following commands:
+Bundles have been installed as submodules.
 
-  git commit -m "Install bundles"
-
-You're all set! See https://whispermudmud.com for guides and API references
+You're all set!
 `);
 
   process.exit(0);
