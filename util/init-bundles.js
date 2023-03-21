@@ -33,28 +33,24 @@ async function main() {
     process.exit(0);
   }
 
-  const githubPath = 'https://github.com/ranviermud/';
+  const githubPath = 'https://github.com/DrunkenImpGameStudio/';
   const defaultBundles = [
-    'https://github.com/RanvierMUD/bundle-example-areas',
-    'https://github.com/RanvierMUD/bundle-example-channels',
-    'https://github.com/RanvierMUD/bundle-example-classes',
-    'https://github.com/RanvierMUD/bundle-example-combat',
-    'https://github.com/RanvierMUD/bundle-example-commands',
-    'https://github.com/RanvierMUD/bundle-example-debug',
-    'https://github.com/RanvierMUD/bundle-example-effects',
-    'https://github.com/RanvierMUD/bundle-example-input-events',
-    'https://github.com/RanvierMUD/bundle-example-lib',
-    'https://github.com/RanvierMUD/bundle-example-npc-behaviors',
-    'https://github.com/RanvierMUD/bundle-example-player-events',
-    'https://github.com/RanvierMUD/bundle-example-quests',
-    'https://github.com/RanvierMUD/simple-crafting',
-    'https://github.com/RanvierMUD/vendor-npcs',
-    'https://github.com/RanvierMUD/player-groups',
-    'https://github.com/RanvierMUD/progressive-respawn',
-    'https://github.com/RanvierMUD/telnet-networking',
-    'https://github.com/RanvierMUD/websocket-networking',
+    'https://github.com/DrunkenImpGameStudio/whispermud-areas',
+    'https://github.com/DrunkenImpGameStudio/whispermud-channels',
+    'https://github.com/DrunkenImpGameStudio/whispermud-classes',
+    'https://github.com/DrunkenImpGameStudio/whispermud-combat',
+    'https://github.com/DrunkenImpGameStudio/whispermud-commands',
+    'https://github.com/DrunkenImpGameStudio/whispermud-debug',
+    'https://github.com/DrunkenImpGameStudio/whispermud-effects',
+    'https://github.com/DrunkenImpGameStudio/whispermud-input',
+    'https://github.com/DrunkenImpGameStudio/whispermud-lib',
+    'https://github.com/DrunkenImpGameStudio/whispermud-npc-behaviors',
+    'https://github.com/DrunkenImpGameStudio/whispermud-player-events',
+    'https://github.com/DrunkenImpGameStudio/whispermud-quests',
+    'https://github.com/DrunkenImpGameStudio/whispermud-crafting',
+    'https://github.com/DrunkenImpGameStudio/whispermud-vendors.git',
+    'https://github.com/DrunkenImpGameStudio/whispermud-respawn',
   ];
-  const enabledBundles = [];
 
   const modified = cp.execSync('git status -uno --porcelain').toString();
   if (modified) {
@@ -70,13 +66,13 @@ async function main() {
   console.info('Done.');
 
   console.info('Enabling bundles...');
-  const ranvierJsonPath = __dirname + '/../ranvier.json';
-  const ranvierJson = require(ranvierJsonPath);
-  ranvierJson.bundles = defaultBundles.map(bundle => bundle.replace(/^.+\/([a-z\-]+)$/, '$1'));
-  fs.writeFileSync(ranvierJsonPath, JSON.stringify(ranvierJson, null, 2));
+  const whispermudJsonPath = __dirname + '/../whispermud.json';
+  const whispermudJson = require(whispermudJsonPath);
+  whispermudJson.bundles = defaultBundles.map(bundle => bundle.replace(/^.+\/([a-z\-]+)$/, '$1'));
+  fs.writeFileSync(whispermudJsonPath, JSON.stringify(whispermudJson, null, 2));
   console.info('Done.');
 
-  cp.execSync('git add ranvier.json');
+  cp.execSync('git add whispermud.json');
 
   console.info(`
 -------------------------------------------------------------------------------
@@ -85,7 +81,7 @@ run the following commands:
 
   git commit -m "Install bundles"
 
-You're all set! See https://ranviermud.com for guides and API references
+You're all set! See https://whispermudmud.com for guides and API references
 `);
 
   process.exit(0);

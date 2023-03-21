@@ -4,16 +4,16 @@
   ],
   "dataSources": {
     "YamlArea": {
-      "require": "ranvier-datasource-file.YamlAreaDataSource"
+      "require": "whispermud-datasource.YamlAreaDataSource"
     },
     "Yaml": {
-      "require": "ranvier-datasource-file.YamlDataSource"
+      "require": "whispermud-datasource.YamlDataSource"
     },
     "YamlDirectory": {
-      "require": "ranvier-datasource-file.YamlDirectoryDataSource"
+      "require": "whispermud-datasource.YamlDirectoryDataSource"
     },
     "JsonDirectory": {
-      "require": "ranvier-datasource-file.JsonDirectoryDataSource"
+      "require": "whispermud-datasource.JsonDirectoryDataSource"
     }
   },
   "entityLoaders": {

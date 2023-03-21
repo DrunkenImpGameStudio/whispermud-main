@@ -1,16 +1,12 @@
 {
   "name": "whispermud-main",
   "version": "0.0.1",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/DrunkenImpGameStudio/whispermud-main.git"
-  },
   "engines": {
     "node": ">= 10.12.0"
   },
   "license": "MIT",
   "scripts": {
-    "start": "node ./ranvier -v",
+    "start": "node ./whispermud -v",
     "init": "node ./util/init-bundles.js",
     "update-bundle-remote": "node ./util/update-bundle-url.js",
     "remove-bundle": "node ./util/remove-bundle.js",
@@ -19,8 +15,9 @@
   "dependencies": {
     "commander": "^2.19.0",
     "optimist": "",
-    "whispermud": "drunkenimpgamestudio/whispermud-core",
-    "ranvier-datasource-file": "^1.0.3",
+    "whispermud-core": "drunkenimpgamestudio/whispermud-core",
+    "whispermud-datasource": "drunkenimpgamestudio/whispermud-datasource",
+    "whispermud-telent": "drunkenimpgamestudio/whispermud-telnet",
     "semver": "^5.6.0",
     "sprintf-js": "^1.0.3",
     "sty": "",

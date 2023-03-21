@@ -11,7 +11,7 @@ coverage/
 *.debug
 gulpTODO.md
 *.sublime-*
-.ranvierSecret
+.whispermudSecret
 log/*.log
 !log/.gitkeep
 
@@ -19,4 +19,4 @@ log/*.log
 site/
 
 # ignore api.ai key
-bundles/ranvier-npc-behaviors/APIAIKEY
+bundles/whispermud-npc-behaviors/APIAIKEY

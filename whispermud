@@ -3,7 +3,7 @@
 
 /**
  * Main file, use this to run the server:
- * node ranvier [options]
+ * node whispermud [options]
  *
  * Options:
  *   -v Verbose loggin
@@ -18,8 +18,8 @@ const commander = require('commander');
 const argv = require('optimist').argv;
 const fs = require('fs');
 
-// for dev clone the github:ranviermud/core repo, and run npm link in that folder, then come
-// back to the ranviermud repo and run npm link ranvier
+// for dev clone the github:whispermudmud/core repo, and run npm link in that folder, then come
+// back to the whispermudmud repo and run npm link whispermud
 const Ranvier = require('whispermud');
 const Config = Ranvier.Config;
 
@@ -33,14 +33,14 @@ if (!semver.satisfies(process.version, pkg.engines.node)) {
   );
 }
 
-// Wrapper for ranvier.json
+// Wrapper for whispermud.json
 Ranvier.Data.setDataPath(__dirname + '/data/');
-if (fs.existsSync('./ranvier.conf.js')) {
-  Config.load(require('./ranvier.conf.js'));
-} else if (fs.existsSync('./ranvier.json')) {
-  Config.load(require('./ranvier.json'));
+if (fs.existsSync('./whispermud.conf.js')) {
+  Config.load(require('./whispermud.conf.js'));
+} else if (fs.existsSync('./whispermud.json')) {
+  Config.load(require('./whispermud.json'));
 } else {
-  console.error('ERROR: No ranvier.json or ranvier.conf.js found');
+  console.error('ERROR: No whispermud.json or whispermud.conf.js found');
   process.exit(1);
 }
 
