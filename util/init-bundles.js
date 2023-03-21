@@ -50,6 +50,7 @@ async function main() {
     'https://github.com/DrunkenImpGameStudio/whispermud-crafting',
     'https://github.com/DrunkenImpGameStudio/whispermud-vendors',
     'https://github.com/DrunkenImpGameStudio/whispermud-respawn',
+    'https://github.com/DrunkenImpGameStudio/whispermud-telnet',
   ];
 
   const modified = cp.execSync('git status -uno --porcelain').toString();
