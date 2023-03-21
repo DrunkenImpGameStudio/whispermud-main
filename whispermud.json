@@ -14,8 +14,9 @@
     "whispermud-player-events",
     "whispermud-quests",
     "whispermud-crafting",
-    "https://github.com/DrunkenImpGameStudio/whispermud-vendors.git",
-    "whispermud-respawn"
+    "whispermud-vendors",
+    "whispermud-respawn",
+    "whispermud-telnet"
   ],
   "dataSources": {
     "YamlArea": {

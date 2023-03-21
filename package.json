@@ -17,6 +17,7 @@
     "optimist": "",
     "whispermud-core": "drunkenimpgamestudio/whispermud-core",
     "whispermud-datasource": "drunkenimpgamestudio/whispermud-datasource",
+    "whispermud-telnet": "drunkenimpgamestudio/whispermud-telnet",
     "semver": "^5.6.0",
     "sprintf-js": "^1.0.3",
     "sty": "",
