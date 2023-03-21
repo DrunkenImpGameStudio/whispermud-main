@@ -20,7 +20,7 @@ const fs = require('fs');
 
 // for dev clone the github:ranviermud/core repo, and run npm link in that folder, then come
 // back to the ranviermud repo and run npm link ranvier
-const Ranvier = require('ranvier');
+const Ranvier = require('whispermud');
 const Config = Ranvier.Config;
 
 // Package.json for versioning
