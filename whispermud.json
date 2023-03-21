@@ -1,6 +1,21 @@
 {
   "port": 4000,
   "bundles": [
+    "whispermud-areas",
+    "whispermud-channels",
+    "whispermud-classes",
+    "whispermud-combat",
+    "whispermud-commands",
+    "whispermud-debug",
+    "whispermud-effects",
+    "whispermud-input",
+    "whispermud-lib",
+    "whispermud-npc-behaviors",
+    "whispermud-player-events",
+    "whispermud-quests",
+    "whispermud-crafting",
+    "https://github.com/DrunkenImpGameStudio/whispermud-vendors.git",
+    "whispermud-respawn"
   ],
   "dataSources": {
     "YamlArea": {

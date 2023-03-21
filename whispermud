@@ -20,7 +20,7 @@ const fs = require('fs');
 
 // for dev clone the github:whispermudmud/core repo, and run npm link in that folder, then come
 // back to the whispermudmud repo and run npm link whispermud
-const Ranvier = require('whispermud');
+const Ranvier = require('whispermud-core');
 const Config = Ranvier.Config;
 
 // Package.json for versioning
@@ -28,7 +28,7 @@ const pkg = require('./package.json');
 
 if (!semver.satisfies(process.version, pkg.engines.node)) {
   throw new Error(
-    `Ranvier's core engine requires Node version ${pkg.engines.node},
+    `WhisperMud's core engine requires Node version ${pkg.engines.node},
     you are currently running Node ${process.version}.`
   );
 }
