@@ -15,7 +15,6 @@ gulpTODO.md
 .whispermudSecret
 log/*.log
 !log/.gitkeep
-bundles/*
 package-lock.json
 
 # ignore mkdocs build target
