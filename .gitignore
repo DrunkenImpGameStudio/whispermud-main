@@ -10,13 +10,13 @@ coverage/
 *.log
 *.debug
 gulpTODO.md
+.gitmodules
 *.sublime-*
 .whispermudSecret
 log/*.log
 !log/.gitkeep
+bundles/*
+package-lock.json
 
 # ignore mkdocs build target
 site/
-
-# ignore api.ai key
-bundles/whispermud-npc-behaviors/APIAIKEY
