@@ -16,6 +16,7 @@ gulpTODO.md
 log/*.log
 !log/.gitkeep
 package-lock.json
+.env
 
 # ignore mkdocs build target
 site/

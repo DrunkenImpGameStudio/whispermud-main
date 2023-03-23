@@ -1,35 +1,29 @@
 {
   "port": 4000,
-  "bundles": [
-    "whispermud-areas",
-    "whispermud-channels",
-    "whispermud-classes",
-    "whispermud-combat",
-    "whispermud-commands",
-    "whispermud-debug",
-    "whispermud-effects",
-    "whispermud-input",
-    "whispermud-lib",
-    "whispermud-npc-behaviors",
-    "whispermud-player-events",
-    "whispermud-quests",
-    "whispermud-crafting",
-    "whispermud-vendors",
-    "whispermud-respawn",
-    "whispermud-telnet"
-  ],
+  "maxAccountNameLength": 20,
+  "minAccountNameLength": 3,
+  "maxPlayerNameLength": 20,
+  "minPlayerNameLength": 3,
+  "maxCharacters": 3,
+  "reportToAdmins": false,
+  "startingRoom": "limbo:white",
+  "moveCommand": "move",
+  "skillLag": 2000,
+  "defaultMaxPlayerInventory": 16,
+  "maxIdleTime": 20,
+  "bundles": [],
   "dataSources": {
     "YamlArea": {
-      "require": "whispermud-datasource.YamlAreaDataSource"
+      "require": "ranvier-datasource-file.YamlAreaDataSource"
     },
     "Yaml": {
-      "require": "whispermud-datasource.YamlDataSource"
+      "require": "ranvier-datasource-file.YamlDataSource"
     },
     "YamlDirectory": {
-      "require": "whispermud-datasource.YamlDirectoryDataSource"
+      "require": "ranvier-datasource-file.YamlDirectoryDataSource"
     },
     "JsonDirectory": {
-      "require": "whispermud-datasource.JsonDirectoryDataSource"
+      "require": "ranvier-datasource-file.JsonDirectoryDataSource"
     }
   },
   "entityLoaders": {
@@ -80,23 +74,12 @@
       "config": {
         "path": "bundles/[BUNDLE]/help"
       }
-    }
-  },
-  "maxAccountNameLength": 20,
-  "minAccountNameLength": 3,
-  "maxPlayerNameLength": 20,
-  "minPlayerNameLength": 3,
-  "maxCharacters": 3,
-  "reportToAdmins": false,
-  "startingRoom": "limbo:white",
-  "moveCommand": "move",
-  "skillLag": 2000,
-  "defaultMaxPlayerInventory": 16,
-  "maxIdleTime": 20,
-  "loot-pools": {
-    "source": "Yaml",
-    "config": {
-      "path": "bundles/[BUNDLE]/areas/[AREA]/loot-pools.yml"
+    },
+    "loot-pools": {
+      "source": "YamlDirectory",
+      "config": {
+        "path": "bundles/[BUNDLE]/areas/[AREA]/loot-pools.yml"
+      }
     }
   }
 }

@@ -48,10 +48,8 @@ async function main() {
     'https://github.com/DrunkenImpGameStudio/whispermud-player-events',
     'https://github.com/DrunkenImpGameStudio/whispermud-quests',
     'https://github.com/DrunkenImpGameStudio/whispermud-crafting',
-    'https://github.com/DrunkenImpGameStudio/whispermud-vendors',
     'https://github.com/DrunkenImpGameStudio/whispermud-respawn',
     'https://github.com/DrunkenImpGameStudio/whispermud-telnet',
-    'https://github.com/DrunkenImpGameStudio/whispermud-waypoints',
     'https://github.com/DrunkenImpGameStudio/whispermud-olc',
     'https://github.com/DrunkenImpGameStudio/whispermud-choices',
   ];
