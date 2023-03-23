@@ -17,11 +17,17 @@
     "optimist": "",
     "whispermud-core": "drunkenimpgamestudio/whispermud-core",
     "whispermud-datasource": "drunkenimpgamestudio/whispermud-datasource",
+    "whispermud-telnet-core": "drunkenimpgamestudio/whispermud-telnet-core",
     "semver": "^5.6.0",
     "sprintf-js": "^1.0.3",
     "sty": "",
     "uuid": "^3.3.2",
-    "winston": "^2.4.4"
+    "winston": "^2.4.4",
+    "@hapi/joi": "^17.1.0",
+    "indefinite-article": "0.0.2",
+    "pluralize": "^8.0.0",
+    "rando-js": "^0.2.0",
+    "humanize-duration": "^3.14.0"
   },
   "devDependencies": {
     "git-url-parse": "^11.1.2"
