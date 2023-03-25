@@ -20,8 +20,8 @@ const fs = require('fs');
 
 // for dev clone the github:whispermudmud/core repo, and run npm link in that folder, then come
 // back to the whispermudmud repo and run npm link whispermud
-const Ranvier = require('whispermud-core');
-const Config = Ranvier.Config;
+const Core = require('whispermud-core');
+const Config = Core.Config;
 
 // Package.json for versioning
 const pkg = require('./package.json');
@@ -34,7 +34,7 @@ if (!semver.satisfies(process.version, pkg.engines.node)) {
 }
 
 // Wrapper for whispermud.json
-Ranvier.Data.setDataPath(__dirname + '/data/');
+Core.Data.setDataPath(__dirname + '/data/');
 if (fs.existsSync('./whispermud.conf.js')) {
   Config.load(require('./whispermud.conf.js'));
 } else if (fs.existsSync('./whispermud.json')) {
@@ -47,7 +47,7 @@ if (fs.existsSync('./whispermud.conf.js')) {
 // cmdline options
 commander
   .version(pkg.version)
-  .option('-p, --port [portNumber]', 'Port to host the server [23]', Ranvier.Config.get('port', 23))
+  .option('-p, --port [portNumber]', 'Port to host the server [23]', Core.Config.get('port', 23))
   .option('-v, --verbose', 'Verbose console logging.', true)
   .option('-e, --prettyErrors', 'Pretty-print formatting for error stack traces.', false)
   .parse(process.argv);
@@ -57,8 +57,8 @@ commander
 process.env.NODE_DEBUG = 'net';
 process.stdin.setEncoding('utf8');
 
-const Logger = Ranvier.Logger;
-const logfile = Ranvier.Config.get('logfile');
+const Logger = Core.Logger;
+const logfile = Core.Config.get('logfile');
 if (logfile) {
   Logger.setFileLogging(`${__dirname}/log/${logfile}`);
 }
@@ -86,38 +86,38 @@ async function init(restartServer) {
   restartServer = typeof restartServer === 'undefined' ? true : restartServer;
 
   GameState = {
-    AccountManager: new Ranvier.AccountManager(),
-    AreaBehaviorManager: new Ranvier.BehaviorManager(),
-    AreaFactory: new Ranvier.AreaFactory(),
-    AreaManager: new Ranvier.AreaManager(),
-    AttributeFactory: new Ranvier.AttributeFactory(),
-    ChannelManager: new Ranvier.ChannelManager(),
-    CommandManager: new Ranvier.CommandManager(),
+    AccountManager: new Core.AccountManager(),
+    AreaBehaviorManager: new Core.BehaviorManager(),
+    AreaFactory: new Core.AreaFactory(),
+    AreaManager: new Core.AreaManager(),
+    AttributeFactory: new Core.AttributeFactory(),
+    ChannelManager: new Core.ChannelManager(),
+    CommandManager: new Core.CommandManager(),
     Config, // All global server settings like default respawn time, save interval, port, what bundles to load, etc.
-    EffectFactory: new Ranvier.EffectFactory(),
-    HelpManager: new Ranvier.HelpManager(),
-    InputEventManager: new Ranvier.EventManager(),
-    ItemBehaviorManager: new Ranvier.BehaviorManager(),
-    ItemFactory: new Ranvier.ItemFactory(),
-    ItemManager: new Ranvier.ItemManager(),
-    MobBehaviorManager: new Ranvier.BehaviorManager(),
-    MobFactory: new Ranvier.MobFactory(),
-    MobManager: new Ranvier.MobManager(),
-    PartyManager: new Ranvier.PartyManager(),
-    PlayerManager: new Ranvier.PlayerManager(),
-    QuestFactory: new Ranvier.QuestFactory(),
-    QuestGoalManager: new Ranvier.QuestGoalManager(),
-    QuestRewardManager: new Ranvier.QuestRewardManager(),
-    RoomBehaviorManager: new Ranvier.BehaviorManager(),
-    RoomFactory: new Ranvier.RoomFactory(),
-    RoomManager: new Ranvier.RoomManager(),
-    SkillManager: new Ranvier.SkillManager(),
-    SpellManager: new Ranvier.SkillManager(),
-    ServerEventManager: new Ranvier.EventManager(),
-    GameServer: new Ranvier.GameServer(),
-    DataLoader: Ranvier.Data,
-    EntityLoaderRegistry: new Ranvier.EntityLoaderRegistry(),
-    DataSourceRegistry: new Ranvier.DataSourceRegistry(),
+    EffectFactory: new Core.EffectFactory(),
+    HelpManager: new Core.HelpManager(),
+    InputEventManager: new Core.EventManager(),
+    ItemBehaviorManager: new Core.BehaviorManager(),
+    ItemFactory: new Core.ItemFactory(),
+    ItemManager: new Core.ItemManager(),
+    MobBehaviorManager: new Core.BehaviorManager(),
+    MobFactory: new Core.MobFactory(),
+    MobManager: new Core.MobManager(),
+    PartyManager: new Core.PartyManager(),
+    PlayerManager: new Core.PlayerManager(),
+    QuestFactory: new Core.QuestFactory(),
+    QuestGoalManager: new Core.QuestGoalManager(),
+    QuestRewardManager: new Core.QuestRewardManager(),
+    RoomBehaviorManager: new Core.BehaviorManager(),
+    RoomFactory: new Core.RoomFactory(),
+    RoomManager: new Core.RoomManager(),
+    SkillManager: new Core.SkillManager(),
+    SpellManager: new Core.SkillManager(),
+    ServerEventManager: new Core.EventManager(),
+    GameServer: new Core.GameServer(),
+    DataLoader: Core.Data,
+    EntityLoaderRegistry: new Core.EntityLoaderRegistry(),
+    DataSourceRegistry: new Core.DataSourceRegistry(),
     Config,
   };
 
@@ -129,7 +129,7 @@ async function init(restartServer) {
   GameState.PlayerManager.setLoader(GameState.EntityLoaderRegistry.get('players'));
 
   // Setup bundlemanager
-  const BundleManager = new Ranvier.BundleManager(__dirname + '/bundles/', GameState);
+  const BundleManager = new Core.BundleManager(__dirname + '/bundles/', GameState);
   GameState.BundleManager = BundleManager;
   await BundleManager.loadBundles();
   GameState.ServerEventManager.attach(GameState.GameServer);

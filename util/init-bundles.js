@@ -52,6 +52,7 @@ async function main() {
     'https://github.com/DrunkenImpGameStudio/whispermud-telnet',
     'https://github.com/DrunkenImpGameStudio/whispermud-olc',
     'https://github.com/DrunkenImpGameStudio/whispermud-choices',
+    'https://github.com/DrunkenImpGameStudio/whispermud-sailing'
   ];
 
   const modified = cp.execSync('git status -uno --porcelain').toString();
