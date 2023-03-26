@@ -35,7 +35,7 @@
   },
   "level": 1,
   "name": "Admin",
-  "room": "limbo:white",
+  "room": "prison:cell1",
   "effects": [],
   "experience": 0,
   "inventory": {
